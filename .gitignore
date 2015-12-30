@@ -1,8 +1,8 @@
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
+/Javacv/nbproject/private/
+/Javacv/build/
+/Javacv/nbbuild/
+/Javacv/dist/
+/Javacv/nbdist/
 nbactions.xml
 .nb-gradle/
 .class
@@ -36,3 +36,4 @@ nbproject/*
 *.swp
 *.DS_Store
 *.lock
+/Javacv/nbproject/private/

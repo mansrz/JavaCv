@@ -37,3 +37,5 @@ nbproject/*
 *.DS_Store
 *.lock
 /Javacv/nbproject/private/
+/PROYECTO/build/
+/PROYECTO/nbproject/private/

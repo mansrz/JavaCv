@@ -13,11 +13,21 @@ public class Conexion {
        private static final String DBMS = "mysql";
        private static final String HOST = "127.0.0.1";
        private static final String PORT = "3306";
-       private static final String DATABASE = "base_java";
+       private static final String DATABASE = "javacv";
        private static final String USER = "root";
-       private static final String PASSWORD = "";
+       private static final String PASSWORD = "lonewolf";
 
     void Conexion(){}
+    
+    public Connection getConnection(){
+        try{
+            this.conectar();
+        }catch(Exception e){
+            
+        }
+                           
+        return con;
+    }
     
     /*METODO CONECTAR*/
    
@@ -104,102 +114,46 @@ public class Conexion {
      return(clientes);
     }     
     
-    /*
-    public boolean modificarCliente(Usuario c)
-    {
-        try
-        {
-            PreparedStatement st = null;
-            st = con.prepareStatement("UPDATE cliente SET nombres = ?, apellidos = ?, edad = ? WHERE identificacion = ?");                        
-            st.setString(1,c.getNombres());
-            st.setString(2,c.getApellidos());
-            st.setInt(3,c.getEdad());
-            st.setString(4,c.getIdentificacion());
-            st.executeUpdate();
-            st.close();                        
-            return true;
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-            return false;
-        }
-        
-    }   
-
-    public boolean eliminarCliente(Cliente c)
-    {
-        try
-        {
-            PreparedStatement st = null;
-            st = con.prepareStatement("DELETE FROM cliente WHERE identificacion = ?");            
-            st.setString(1,c.getIdentificacion());         
-            st.executeUpdate();
-            st.close();                        
-            return true;
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-            return false;
-        }        
-    } 
-    */
+    
     
     public boolean esUsuarioValido(Usuario u)
     {        
         boolean resultado = false;
         ResultSet rs = null;                       
         PreparedStatement st = null;
+        String enlace;
+        enlace = "SELECT * FROM javacv.login WHERE usuario = ? AND password = md5(?);";
         try
         {            
-            st = con.prepareStatement("SELECT * FROM usuario WHERE idusuario = ? AND clave = md5(?) AND estado = ?");            
+            
+            st =  con.prepareStatement(enlace);          
+            //System.out.println(u.getIdusuario()+"-"+u.getClave());
             st.setString(1,u.getIdusuario());         
             st.setString(2,u.getClave());
-            st.setString(3,"A");
-            rs = st.executeQuery();            
-            if(rs.next()){
-                u.setRol(rs.getString("rol"));
-                resultado = true;
-            } 
+            //st.setString(3,"A");
+            rs = st.executeQuery();
+            rs.next();
             
-            rs.close();
-            st.close();
-        }
-        catch(Exception e){
-            System.out.println(e);
-            resultado = false;
-        }           
-     return resultado; 
-    }
-
-//    public boolean ingresarUsuario(Usuario u) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
- 
-    /** 
-     * *ESTE CODIGO ES PROPIEDAD DE WILMER ACOSTA * *
-    public boolean acceder(String idusuario, String clave)
-    {
-        ResultSet rs =null;
-        PreparedStatement st = null;
-        try
-        {
-            st = con.prepareStatement("SELECT * FROM usuario WHERE idusuario= ? AND clave = md5(?)");
-            st.setString(1,idusuario);
-            st.setString(2,clave);
-            rs= st.executeQuery();
-            if(rs.next()){
-                return true;
+            //System.out.println(rs.getRow()+"row");
+            if(rs.getRow()!=0)
+            {
+                if(rs.getString(1).equals(u.getIdusuario())){
+                    //u.setRol(rs.getString("usuario"));
+                    //System.out.println(u.getIdusuario());
+                    //System.out.println("Comparacion exitosa");
+                    resultado = true;
+                }
             }
             rs.close();
             st.close();
         }
         catch(Exception e){
             System.out.println(e);
-            return false;
+            resultado = false;
         }
-        return false;
+        System.out.println(resultado);
+        return resultado; 
     }
-  */  
+
+
 }

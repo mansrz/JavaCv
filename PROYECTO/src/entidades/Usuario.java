@@ -10,14 +10,15 @@ package entidades;
  * @author wilme
  */
 public class Usuario {
-    private String idusuario;
+    private String id_usuario;//---------------------------------
     private String clave;
     private String rol;
     private String estado;
     private String fecha;
 
-    public Usuario(String idusuario, String clave, String rol, String estado, String fecha) {
-        this.idusuario = idusuario;
+    public Usuario(String idusuario, String clave, String rol, String estado, String fecha) 
+    {
+        this.id_usuario = idusuario;
         this.clave = clave;
         this.rol = rol;
         this.estado = estado;
@@ -25,23 +26,23 @@ public class Usuario {
     }
 
     public Usuario(String idusuario, String clave, String rol, String estado) {
-        this.idusuario = idusuario;
+        this.id_usuario = idusuario;
         this.clave = clave;
         this.rol = rol;
         this.estado = estado;
     }
 
     public Usuario(String idusuario, String clave) {
-        this.idusuario = idusuario;
+        this.id_usuario = idusuario;
         this.clave = clave;
     }
 
     public String getIdusuario() {
-        return idusuario;
+        return id_usuario;
     }
 
     public void setIdusuario(String idusuario) {
-        this.idusuario = idusuario;
+        this.id_usuario = idusuario;
     }
 
     

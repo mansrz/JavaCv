@@ -5,6 +5,7 @@
  */
 package formularios;
 
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
@@ -22,15 +23,11 @@ public class FrmIntegrantes extends javax.swing.JFrame {
      */
     public FrmIntegrantes() {
         initComponents();
-                setLocationRelativeTo(null);
-          setTitle ("Integrantes");
-         setIconImage(new ImageIcon(getClass().getResource("/iconos/autores.png")).getImage());
-        ((JPanel)getContentPane()).setOpaque(false);
-        ImageIcon uno=new ImageIcon(this.getClass().getResource("/imagenes/Integrantes.jpg"));
-        JLabel Integrantes= new JLabel();
-       Integrantes.setIcon(uno);
-        getLayeredPane().add(Integrantes,JLayeredPane.FRAME_CONTENT_LAYER);
-       Integrantes.setBounds(0,0,uno.getIconWidth(),uno.getIconHeight());
+        setLocationRelativeTo(null);
+        setTitle ("Integrantes");
+        this.getContentPane().setBackground(Color.DARK_GRAY);
+        jButton1.setBackground(Color.DARK_GRAY);
+         
         
         
         
@@ -45,78 +42,43 @@ public class FrmIntegrantes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jBIntegrantes = new javax.swing.JButton();
-        jBAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(51, 51, 51));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 610, 400));
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 153, 153));
-        jButton2.setText("1. Cesar Criollo Ortiz");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 200, -1));
-
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 153, 153));
-        jButton3.setText("2. Cesar Crio Ortiz");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 190, -1));
-
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 153, 153));
-        jButton4.setText("3. Cess Criolll ");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 170, 190, -1));
-
-        jButton5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 153, 153));
-        jButton5.setText("4. Cesar Criooooo");
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 190, -1));
-
-        jBIntegrantes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jBIntegrantes.setForeground(new java.awt.Color(51, 153, 255));
-        jBIntegrantes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/autores.png"))); // NOI18N
-        jBIntegrantes.setText("Integrantes");
-        getContentPane().add(jBIntegrantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 190, -1));
-
-        jBAtras.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jBAtras.setForeground(new java.awt.Color(0, 153, 255));
-        jBAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/images_2.jpg"))); // NOI18N
-        jBAtras.setText("Atras");
-        jBAtras.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/formularios/Imagenes/power.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAtrasActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jBAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, 170, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 80, 80));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("INTEGRANTES");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 280, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAtrasActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-          FrmPrincipal frm = new FrmPrincipal();
-          frm.setVisible(true);
-           dispose();
-    }//GEN-LAST:event_jBAtrasActionPerformed
-
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+    
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBAtras;
-    private javax.swing.JButton jBIntegrantes;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 

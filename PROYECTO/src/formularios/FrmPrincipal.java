@@ -16,7 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 import javax.swing.Timer;
-import javax.media.*;
+//import javax.media.*;
 import javax.swing.DefaultComboBoxModel;
 import org.opencv.core.Core;
 import org.opencv.core.CvType;
@@ -26,7 +26,7 @@ import org.opencv.core.Mat;
 public abstract class FrmPrincipal extends javax.swing.JFrame implements Runnable {
     
 
-    private Player player;
+  //  private Player player;
     public static boolean inittype;
     public FrmPrincipal() 
     {
